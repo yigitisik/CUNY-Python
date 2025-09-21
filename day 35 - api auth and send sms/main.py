@@ -6,12 +6,12 @@ from twilio.http.http_client import TwilioHttpClient
 weather_api_endpoint = "https://api.openweathermap.org/data/2.5/forecast"
 weather_api_key = os.environ.get("WEATHER_API_KEY")
 
-twilio_account_SID = "AC39dbf92b97d034f1e78d338c150fbcaf"
+twilio_account_SID = "INSERT YOURS"
 twilio_auth_token = os.environ.get("TWILIO_AUTH_TOKEN")
 
 params = {
-    "lat": 43.074687,
-    "lon": -89.452479,
+    # "lat": INSERT YOUR LAT,
+    # "lon": INSERT YOUR LONG,
     "appid": weather_api_key,
     "cnt": 4,
 }
@@ -46,12 +46,12 @@ if expecting_Rain:
     message = twilio_client.messages.create(
         body= "Hi, expecting rain in next 12 hours, you may want an umbrella, ☂️",
         from_="whatsapp:+14155238886",
-        to = "whatsapp:+16085145142",
+        to = "whatsapp:+1608XXXXXXX",
     )
     message_2 = twilio_client.messages.create(
         body="Hi, expecting rain in next 12 hours, you may want an umbrella, ☂️",
         from_="whatsapp:+14155238886",
-        to="whatsapp:+18572943262",
+        to="whatsapp:+1857XXXXXXX",
     )
     print((message.status, message.sid))
     print((message_2.status, message_2.sid))
